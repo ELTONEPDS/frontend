@@ -7,7 +7,7 @@
     /* bg = background = plano de fundo */
     --secondary-bg-color: #28292E;
     --primary-border-color: #28292E;
-    --secundary-border-color: #56575A;
+    --secondary-border-color: #56575A;
 
     --title-color: #F0f0f0;
     --text-color: #9a9a9c;
@@ -71,24 +71,24 @@ body {
     color: var(--text-color);
 }
 
-
 a {
     text-decoration: none;
     color: var(--text-color);
 }
-a:hiver {
-    color: var(--text-color);
-}
-i {
+a:hover {
     color: var(--primary-color);
 }
+i {
+    color: var(--icon-color);
+}
+
 b {
     font-weight: 400;
 }
 
 h1 {
     font-size: 2.5rem;
-    font-weight: 100;
+    font-weight: 200;
 }
 h2 {
     font-size: 2rem;
@@ -109,7 +109,7 @@ h1, h2, h3{
     font-family: 'League Spartan', Tahoma, Geneva, Verdana, sans-serif;
     text-transform: uppercase;
     color: var(--title-color);
-    font-size: 200;
+    font-weight: 200;
 }
 
 p, span, li {
@@ -155,7 +155,7 @@ p {
     transformando todos os seus filhos diretos em flex itens */
     align-items: center;
     background: var(--primary-bg-color);
-    gap: 1rem;  /*    */ 
+    gap: 1rem;
 }
 .menu-item{
     width: 100%;
@@ -173,14 +173,14 @@ p {
 
 .menu-mobile {
     width: 100vw;  /* V W = viewport width*/
-    position: fixed;
+    /* position: fixed; */
     bottom: 0;
     justify-content: space-between;
     border-top: 1px solid var(--primary-border-color);   
 }
 
 .menu-mobile .menu-link {
-    flex-direction: column;  
+    flex-direction: column;
     /* definir a direção principal dos itens em uma coluna vertical */
     justify-content: center;
     padding: 0.5rem 1rem;
@@ -196,7 +196,6 @@ p {
 .menu-icon, .menu-text{
     color: var(--text-color);
 }
-
 .menu-icon{
     font-size: 1.5rem;
 }
@@ -204,15 +203,15 @@ p {
     font-size: .75rem;
     text-transform: uppercase;
 }
-/*
-.header-nav {  menu desktop
-    display: ; habilitar none
+/* 
+.header-nav {   menu desktop 
+    display: none;    none 
 }
 */
 .menu-principal {
     gap: 1rem;
 }
-.menu-social {
+.menu-social{
     gap: 1rem;
 }
 .btn {
@@ -225,7 +224,7 @@ p {
     border-radius: 3rem;
     border: none;
     padding: 0.5rem 1.5rem;
-    transition: ease-in-out 0.3s;
+    transition: ease-in-out .3s;
     cursor: pointer;
     color: var(--primary-color);
 }
@@ -233,7 +232,7 @@ p {
     transform: scale(1.05);
     transition: ease-in-out .3s;
 }
-.btn span, .btn i{
+.btn span, .btn i {
     font-size: 1.25rem;
     text-transform: uppercase;
 }
@@ -243,10 +242,10 @@ p {
 .btn-primary {
     border: 1px solid var(--primary-color);
 }
-#home{
+#home {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 2rem; 
 }
 .main-content {
     display: flex;
@@ -267,7 +266,7 @@ p {
     align-items: center;
     gap: 1.25rem;
     padding: 6.25rem 1rem 2rem;
-    background: var(--primary-bg-color);
+    background: var(--secondary-bg-color);
     margin-top: -5.5rem;
 }
 .tecnologias h2 {
@@ -276,7 +275,7 @@ p {
     letter-spacing: normal;
     text-align: start;
 }
-.tecnologia-lista {
+.tecnologias-lista {  
     display: flex;
     flex-flow: row wrap;
     gap: .5rem;
@@ -288,9 +287,14 @@ p {
     align-items: center;
     width: 4.8rem;
     height: 4.8rem;
-    border: 1px solid var(--primary-border-color);
+    border: 3px solid var(--secondary-border-color);
     border-radius: 5rem;
 }
-.tecnologia-logo {
+.tecnologia-logo{
     height: 2.4rem;
+}
+
+.projetos {
+    
+
 }
