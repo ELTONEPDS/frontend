@@ -1,9 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=League+Spartan:wght@100..900&display=swap');
 
-:root, :root[data-theme='dark'] {
-    --primary-color: #F0F0F0;  /* cor de texto */
+/* Definir o tema dark do site */
+:root, 
+:root[data-theme='dark'] {
+    /* Definir cores padrão em variáveis */
+    --primary-color: #f0f0f0;  
+    /* cor de texto */
     
-    --primary-bg-color: #111217;  /* cor de fundo  */
+    --primary-bg-color: #131313;  /* cor de fundo  */
     /* bg = background = plano de fundo */
     --secondary-bg-color: #28292E;
     --primary-border-color: #28292E;
@@ -11,12 +15,11 @@
 
     --title-color: #F0f0f0;
     --text-color: #9a9a9c;
-    --link-color: #9a9a9c;
+    --link-color: #56575A;
     --icon-color: #c7c8c9;
 
 }
-
-:root [data-theme='light'] {
+:root[data-theme='light'] {
     --primary-color: #0B0B0F;
     --primary-bg-color: #E9E9E9;
     --secondary-bg-color: #C7c8c9;
@@ -39,10 +42,10 @@ Isso oferece uma maneira flexível de definir valores
 que podem ser reutilizados em todo o seu CSS e facilmente atualizados de um único lugar.
 */
 
-html [data-theme='light'] .brand-logo {
+html[data-theme='light'] .logo {
     filter:invert(1);
 }
-html [data-theme='light'] .tecnologias-logo {
+html[data-theme='light'] .tecnologias-logo {
     filter: invert(80%);
 }
 /*  (*) reset do CSS */
@@ -58,9 +61,7 @@ html [data-theme='light'] .tecnologias-logo {
     para calcular a largura e a altura total de um elemento,
     incluindo a largura das bordas e o preenchimento, e não apenas o conteúdo.
     */
-   
-
-   /* vertical-align: baseline; */
+   vertical-align: baseline;
    list-style: none;
    scrollbar-width: thin;
    scrollbar-color: var(--secondary-bg-color) transparent;
@@ -70,7 +71,6 @@ body {
     font-family: 'Inter', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--text-color);
 }
-
 a {
     text-decoration: none;
     color: var(--text-color);
@@ -81,17 +81,15 @@ a:hover {
 i {
     color: var(--icon-color);
 }
-
 b {
     font-weight: 400;
 }
-
 h1 {
     font-size: 2.5rem;
     font-weight: 200;
 }
 h2 {
-    font-size: 1rem;
+    font-size: 2rem;
     text-align: center;
     letter-spacing: 0.4rem;
 }
@@ -111,16 +109,12 @@ h1, h2, h3{
     color: var(--title-color);
     font-weight: 200;
 }
-
 p, span, li {
     font-size: 1rem;
 }
 p {
     text-align: justify;
 }
-
-/***/
-
 #header {
     display: flex;
     flex-flow: row wrap;
@@ -137,7 +131,6 @@ p {
     width: 3.25rem;
     height: 3.25rem;
 }
-
 .header-toggle {
     display: flex;
     justify-content: flex-end;
@@ -148,7 +141,6 @@ p {
     cursor: pointer;
     transition: ease-in-out .4s;
 }
-
 .menu{
     display: flex;
     /*  Torna o elemento um flex container automaticamente
@@ -170,29 +162,25 @@ p {
     criar espaçamento uniforme entre os elementos
     */
 }
-
 .menu-mobile {
     width: 100vw;  /* V W = viewport width*/
-    /* position: fixed; */
+    position: fixed;
     bottom: 0;
     justify-content: space-between;
     border-top: 1px solid var(--primary-border-color);   
 }
-
 .menu-mobile .menu-link {
     flex-direction: column;
     /* definir a direção principal dos itens em uma coluna vertical */
     justify-content: center;
     padding: 0.5rem 1rem;
 }
-
-.menu-link.active .menu-icon,
+.menu-link.active .menu-icon, 
 .menu-link.active .menu-text,
-.menu-link:hover .menu-icon,
-.menu-link:hover .menu-text { /* a:hover = pseudo-classe  */
-    color: var(--primary-color);
+.menu-link:hover .menu-icon, 
+.menu-link:hover .menu-text {
+  color: var(--primary-color);
 }
-
 .menu-icon, .menu-text{
     color: var(--text-color);
 }
@@ -203,11 +191,9 @@ p {
     font-size: .75rem;
     text-transform: uppercase;
 }
-/* 
-.header-nav {   menu desktop 
-    display: none;    none 
+.header-nav { 
+    display: none; 
 }
-*/
 .menu-principal {
     gap: 1rem;
 }
@@ -294,39 +280,29 @@ p {
     height: 2.4rem;
 }
 .projetos {
-    display: flex; 
-    flex-direction: column;
-    gap: 2rem;
-}
-    .projeto-container {
-        display: flex;
-        flex-direction: column;
-        gap: 4rem;
-}
-/*
-#home, 
-.tecnologias,
-.projetos . projeto-container,
-.sobre,
-.contato {
     display: flex;
-    flex-direction: colum;
+    flex-direction: column;
+    gap: 2rem;    
 }
-*/
+.projeto-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
 .projeto-card {
-    font-display: flex;
+    display: flex;
     flex-direction: column;
     gap: 2rem;
 }
 .card-cover {
     width: 100%;
-    border: 0.5rem;
+    border-radius: 0.5rem;
     object-fit: cover;
     object-position: center;
 }
 .card-body{
     display: flex;
-    flex-direction: flex;
+    flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
     gap: 1rem;
@@ -339,13 +315,13 @@ p {
 .card-descricao {
     color: var(--title-color);
 }
-.card-lista, .sobre-lista{
+.card-lista .sobre-lista{
     margin-left: 1.25rem;
 }
 .card-item, .sobre-item{
     list-style: disc;
 }
-.card-button, .card-descricao {
+.card-button, .card-descricao{
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -359,11 +335,11 @@ p {
 .card-body .tecnologias-lista {
     gap: .75rem;
 }
-.card-body .tecnologia-item {
+.card-body .tecnologia-item{
     width: 4rem;
     height: 4rem;
 }
-.card-body .tecnologia-logo {
+.card-body .tecnologia-logo{
     height: 2rem;
 }
 .projetos .btn {
@@ -374,7 +350,7 @@ p {
 .sobre {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;    
+    gap: 1.5rem;
 }
 .sobre-content1, .sobre-content2 {
     display: flex;
@@ -386,10 +362,10 @@ p {
 .sobre-logo {
     width: 100%;
     object-fit: cover;
-    object-position: cover;
-    pointer-events: none;/* Pointer EEVENRS*/
+    object-position: center;
+    pointer-events: none;
     border-radius: 50rem;
-    border: 20px solid var(--primary-color);
+    border:  8px solid var(--primary-color);
 }
 .sobre-descricao {
     display: flex;
@@ -412,8 +388,7 @@ p {
     text-align: justify;
     gap: 2rem;
 }
-
-.sobre-content2 .col1 .row1,
+.sobre-content2 .col1 .row1, 
 .sobre-content2 .col1 .row2 {
     display: flex;
     flex-direction: column;
@@ -438,10 +413,10 @@ p {
     border-radius: 0.25rem 0.25rem 0rem 0rem;
 }
 .accordion-header.end, 
-.accordion-header.active .accordion-body.end {
+.accordion-item.active .accordion-body.end {
     border-radius: 0rem 0rem 0.25rem 0.25rem;
 }
-.accordion-item.active .accordion-item.active {
+.accordion-item.active .accordion-item.end {
     border-radius: 0;
 }
 .accordion-body {
@@ -461,7 +436,7 @@ p {
 .accordion-item.active .bi-caret-down-fill {
     transform: rotate(180deg);
 }
-/*Contato*/
+/* Contato */
 .contato {
     display: flex;
     flex-direction: column;
@@ -482,14 +457,13 @@ p {
 }
 /* Roda Pé */
 footer {
-    margin-bottom: 5rem;
+    margin-bottom: 5rem;  
 }
 footer p {
     font-size: .875rem;
     text-align: center;
-    padding: 1rem;    
+    padding: 1rem;
 }
-
 /* Responsividade */
 @media (min-width: 768px) {
     #header {
@@ -501,10 +475,10 @@ footer p {
     .nav-mobile {
         display: none;
     }
-    .header-nav {
+    .header-nav { 
         display: flex;
     }
-    .header-nav, 
+    .header-nav,
     .header-toggle {
         min-width: 30%;
     }
@@ -529,14 +503,13 @@ footer p {
     .contato {
         padding: 6rem;
     }
-    .contato p{
+    .contato p {
         width: 80%;
     }
     footer {
         margin: 0;
     }
 }
-
 @media (min-width: 992px) {
     .projeto-card {
         flex-direction: row;
@@ -553,7 +526,7 @@ footer p {
     }
     .sobre-content1, .sobre-content2 {
         display: grid;
-        grid-template-columns: 40% 80%;
+        grid-template-columns: 34% 60%;
         justify-content: flex-start;
         align-items: flex-start;
         gap: 4rem;
@@ -587,7 +560,7 @@ footer p {
         font-size: 3rem;
         width: 55%;
     }
-    .tecnologias-lista {
+    .tecnologias-lista{
         gap: 1rem;
     }
     .tecnologia-item {
@@ -600,17 +573,16 @@ footer p {
     p, span, li {
         font-size: 1.15rem;
     }
-    .card-button .btn,
+    .card-button .btn, 
     .descricao-button .btn {
         width: auto;
     }
 }
-
-@media (main-width: 1400px) {
+@media (min-width: 1400px) {
     h1 {
         font-size: 6.25rem;
     }
-    h2 {
+    h2{
         font-size: 4.5rem;
     }
     h3 {
