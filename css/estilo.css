@@ -45,7 +45,7 @@ que podem ser reutilizados em todo o seu CSS e facilmente atualizados de um úni
 html[data-theme='light'] .logo {
     filter:invert(1);
 }
-html[data-theme='light'] .tecnologias-logo {
+html[data-theme='light'] .tecnologia-logo {
     filter: invert(80%);
 }
 /*  (*) reset do CSS */
@@ -179,10 +179,11 @@ p {
 .menu-link.active .menu-text,
 .menu-link:hover .menu-icon, 
 .menu-link:hover .menu-text {
-  color: var(--primary-color);
+  color: var(--link-color);
 }
 .menu-icon, .menu-text{
     color: var(--text-color);
+    font-weight: 600;
 }
 .menu-icon{
     font-size: 1.5rem;
